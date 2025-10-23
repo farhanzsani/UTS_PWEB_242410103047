@@ -5,16 +5,15 @@
 @section('content')
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
     
-    <!-- Page Header with Animation -->
+
     <div class="mb-8 animate-fade-in">
         <div class="flex items-center space-x-3 mb-2">
             <div class="w-1 h-8 bg-gradient-to-b from-green-500 to-teal-600 rounded-full"></div>
             <h2 class="text-3xl font-bold text-gray-800">Dashboard</h2>
         </div>
-        <p class="text-gray-600 ml-4">Selamat datang di sistem manajemen kebun binatang</p>
+        <p class="text-gray-600 ml-4">Selamat datang di sistem manajemen Lihat Kebun-ku</p>
     </div>
 
-    <!-- Statistics Cards -->
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
         <x-card 
             title="Total Satwa" 
@@ -35,10 +34,10 @@
         />
     </div>
 
-    <!-- Main Content Grid -->
+
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
         
-        <!-- Daftar Satwa -->
+
         <div class="lg:col-span-2 bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl border border-white/20 p-6 hover:shadow-2xl transition-shadow duration-300">
             <div class="flex items-center justify-between mb-6">
                 <h3 class="text-xl font-bold text-gray-800 flex items-center space-x-2">
@@ -75,10 +74,8 @@
             </div>
         </div>
 
-        <!-- Sidebar -->
+    
         <div class="space-y-6">
-            
-            <!-- Petugas Card -->
             <div class="bg-gradient-to-br from-blue-500 to-cyan-600 rounded-2xl shadow-xl p-6 text-white hover:shadow-2xl transition-shadow duration-300">
                 <div class="flex items-center space-x-2 mb-4">
                     <span class="text-2xl">👨‍🔧</span>
@@ -96,7 +93,7 @@
                 </div>
             </div>
 
-            <!-- Persediaan Pakan Card -->
+
             <div class="bg-gradient-to-br from-amber-500 to-orange-600 rounded-2xl shadow-xl p-6 text-white hover:shadow-2xl transition-shadow duration-300">
                 <div class="flex items-center space-x-2 mb-4">
                     <span class="text-2xl">🥩</span>

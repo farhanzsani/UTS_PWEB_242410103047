@@ -11,21 +11,21 @@
     <div class="w-full max-w-md">
         <div class="bg-white rounded-2xl shadow-lg p-8">
             
-            <!-- Header -->
+            
             <div class="text-center mb-8">
                 <div class="text-5xl mb-3">🦁</div>
-                <h1 class="text-2xl font-bold text-gray-800">Kebun Binatang</h1>
+                <h1 class="text-2xl font-bold text-gray-800">Lihat Kebun-ku</h1>
                 <p class="text-gray-500 text-sm mt-1">Silakan login untuk melanjutkan</p>
             </div>
 
-            <!-- Error Message -->
+           
             @if(session('error'))
             <div class="mb-6 bg-red-50 border border-red-200 text-red-600 p-3 rounded-lg text-sm">
                 {{ session('error') }}
             </div>
             @endif
 
-            <!-- Form -->
+            
             <form action="/login" method="POST" class="space-y-5">
                 @csrf
                 
@@ -63,12 +63,8 @@
                 </button>
             </form>
 
-            <!-- Demo Info -->
-            <div class="mt-6 pt-6 border-t text-center">
-                <p class="text-xs text-gray-500">
-                    Demo: <span class="font-semibold text-gray-700">admin</span> / <span class="font-semibold text-gray-700">12345678</span>
-                </p>
-            </div>
+          
+            
         </div>
     </div>
 

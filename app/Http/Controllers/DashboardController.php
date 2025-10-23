@@ -6,30 +6,29 @@ use Illuminate\Http\Request;
 
 class DashboardController extends Controller
 {
+    private $Satwa = [
+        ['nama' => 'Harimau Sumatra', 'spesies' => 'Panthera tigris sumatrae', 'usia' => 5],
+        ['nama' => 'Gajah Asia', 'spesies' => 'Elephas maximus', 'usia' => 12],
+        ['nama' => 'Orangutan', 'spesies' => 'Pongo pygmaeus', 'usia' => 8],
+        ['nama' => 'Komodo', 'spesies' => 'Varanus komodoensis', 'usia' => 7],
+        ['nama' => 'Burung Cendrawasih', 'spesies' => 'Paradisaea apoda', 'usia' => 3],
+    ];
 
-     public function showDashboard()
+    public function showDashboard(Request $request)
     {
 
-        $Satwa = [
-            ['nama' => 'Harimau Sumatra', 'spesies' => 'Panthera tigris sumatrae', 'usia' => 5],
-            ['nama' => 'Gajah Asia', 'spesies' => 'Elephas maximus', 'usia' => 12],
-            ['nama' => 'Orangutan', 'spesies' => 'Pongo pygmaeus', 'usia' => 8],
-            ['nama' => 'Komodo', 'spesies' => 'Varanus komodoensis', 'usia' => 7],
-            ['nama' => 'Burung Cendrawasih', 'spesies' => 'Paradisaea apoda', 'usia' => 3],
-        ];
+        $username = $request->query('username');
 
         $petugas= [
-            ['nama' => 'Rudi', 'shift' => 'Pagi'],
-            ['nama' => 'Santi', 'shift' => 'Siang'],
-            ['nama' => 'Bagus', 'shift' => 'Malam'],
+            ['nama' => 'Secangkir Adit', 'shift' => 'Pagi'],
+            ['nama' => 'Sesendok Wildan', 'shift' => 'Siang'],
+            ['nama' => 'Semangkuk Fahmi', 'shift' => 'Malam'],
         ];
 
-        
-        $totalSatwa = count($Satwa);
-        $totalSpesies = count(array_unique(array_column($Satwa, 'spesies')));
+        $totalSatwa = count($this->Satwa);
+        $totalSpesies = count(array_unique(array_column($this->Satwa, 'spesies')));
         $totalPetugas= count($petugas);
 
-        
         $persediaanPakan = [
             'Daging' => '120 kg',
             'Buah-buahan' => '75 kg',
@@ -37,14 +36,20 @@ class DashboardController extends Controller
         ];  
 
         return view('pages.dashboard', [
+            'username' => $username,
             'totalSatwa' => $totalSatwa,
             'totalspesies' => $totalSpesies,
             'totalZookeepers' => $totalPetugas,
             'persediaanPakan' => $persediaanPakan,
-            'Satwa' => $Satwa,
+            'Satwa' => $this->Satwa,
             'zookeepers' => $petugas,
         ]);
     }
 
-
+    public function showSatwa()
+    {
+        return view('pages.kelolaSatwa', [
+            'Satwa' => $this->Satwa
+        ]);
+    }
 }

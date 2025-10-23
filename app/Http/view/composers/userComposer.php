@@ -10,7 +10,7 @@ class UserComposer
     
      public function compose(View $view): void
     {
-        // Ambil username dari session
+        
         $username = session('user', 'guest');
         
         $view->with([

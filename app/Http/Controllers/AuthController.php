@@ -15,6 +15,18 @@ class AuthController extends Controller
     public function showLogin(){
         return view('pages.login');
     }
+
+    public function profile(request $request)
+    {
+        
+         $username = $request->query('username');
+
+
+        return view('pages.profile', [
+            'username' => $username
+        ]);
+    }
+
     
 
     public function Login(Request $request)
@@ -25,7 +37,7 @@ class AuthController extends Controller
         foreach ($this->users as $user) {
             if ($user['username'] === $username && $user['password'] === $password) {
                 session(['user' => $username]);
-                return redirect()->route('dashboard');
+                return redirect('/dashboard?username=' . $username);
             }
         }
 
